@@ -1,0 +1,61 @@
+<!--
+ * Copyright (c) 2014 Cisco Systems, Inc. and others.  All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+-->
+
+ <table border = "0">
+	<tr>
+	   <td>Enter first name:</td>
+	   <td><input type = "text" ng-model = "dpi.firstName"></td>
+	</tr>
+	
+	<tr>
+	   <td>Enter last name: </td>
+	   <td><input type = "text" ng-model = "dpi.lastName"></td>
+	</tr>
+	
+	<tr>
+	   <td>Enter fees: </td>
+	   <td><input type = "text" ng-model = "dpi.fees"></td>
+	</tr>
+	
+	<tr>
+	   <td>Enter subject: </td>
+	   <td><input type = "text" ng-model = "subjectName"></td>
+	</tr>
+ </table>
+ <br/>
+ 
+ <table border = "0">
+	<tr>
+	   <td>Name in Upper Case: </td><td>{{dpi.fullName() | uppercase}}</td>
+	</tr>
+ 
+	<tr>
+	   <td>Name in Lower Case: </td><td>{{dpi.fullName() | lowercase}}</td>
+	</tr>
+ 
+	<tr>
+	   <td>fees: </td><td>{{dpi.fees | currency}}
+	   </td>
+	</tr>
+		
+	<tr>
+	   <td>Subject:</td>
+
+	   <td>
+		  <ul>
+			 <li ng-repeat = "subject in dpi.subjects | filter: subjectName |orderBy:'marks'">
+				{{ subject.name + ', marks:' + subject.marks }}
+			 </li>
+		  </ul>
+	   </td>
+	</tr>
+ </table>
+ 
+</div>
+
+ 
